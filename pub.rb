@@ -32,6 +32,10 @@ class Pub
     return "Thou shallt not drink!"
 
   end
+  
+  def drunk_check(customer)
+    return customer.drunkenness
+  end
 
 
 end

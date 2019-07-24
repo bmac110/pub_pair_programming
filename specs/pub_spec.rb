@@ -8,11 +8,11 @@ class PubTest < MiniTest::Test
 
   def setup()
 
-    @drink1 = Drink.new("Purple Rain", 6)
-    @drink2 = Drink.new("The Lonesome Road", 10)
-    @drink3 = Drink.new("The Woozy Wayne", 6)
-    @drink4 = Drink.new("The Wonky Wainbow", 8)
-    @drink5 = Drink.new("The Wild Wild West", 6)
+    @drink1 = Drink.new("Purple Rain", 6, 5)
+    @drink2 = Drink.new("The Lonesome Road", 10, 15)
+    @drink3 = Drink.new("The Woozy Wayne", 6, 25)
+    @drink4 = Drink.new("The Wonky Wainbow", 8, 4)
+    @drink5 = Drink.new("The Wild Wild West", 6, 7)
 
     drinks = [@drink1, @drink2, @drink3, @drink4, @drink5]
 
@@ -69,6 +69,12 @@ class PubTest < MiniTest::Test
     @pub.allowed_to_sell(customer, @drink1)
     assert_equal(2000, @pub.till)
     assert_equal("Thou shallt not drink!", @pub.allowed_to_sell(customer, @drink1))
+  end
+
+  def test_check_if_customer_is_sober()
+    customer = Customer.new("Gandalf", 500, 120)
+    @pub.drunk_check(customer)
+    assert_equal(0, customer.drunkenness)
   end
 
 end
