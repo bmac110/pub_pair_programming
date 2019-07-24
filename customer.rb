@@ -27,6 +27,10 @@ class Customer
 
   end
 
+  def get_drunker(number)
+    @drunkenness += 6
+  end
+
 
 
 end
