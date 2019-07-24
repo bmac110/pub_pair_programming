@@ -24,5 +24,14 @@ class Pub
     return customer.age >= 18
   end
 
+  def allowed_to_sell(customer, drink)
+    if check_age(customer) == true
+      sell_drink(drink)
+    end
+
+    return "Thou shallt not drink!"
+
+  end
+
 
 end
