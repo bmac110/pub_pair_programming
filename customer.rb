@@ -22,13 +22,13 @@ class Customer
     pay(spending)
   end
 
-  # def buy_drink_from_pub(pub)
-  #   #customer needs to spend money
-  #   spending = pay(drink)
-  #   #pub increase with the amount customer has spent
-  #   pub.sell_drink(spending)
-  #
-  # end
+  def buy_drink_from_pub(pub, drink)
+    #customer needs to spend money
+    buy_drink(drink)
+    #pub increase with the amount customer has spent
+    pub.sell_drink(drink)
+
+  end
 
 
 
