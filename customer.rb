@@ -27,8 +27,16 @@ class Customer
 
   end
 
-  def get_drunker(number)
-    @drunkenness += 6
+  def increase_drunk(number)
+    @drunkenness += number
+  end
+
+  def get_drunk(drink)
+
+    alcohol = drink.alcohol_level
+
+    increase_drunk(alcohol)
+
   end
 
 

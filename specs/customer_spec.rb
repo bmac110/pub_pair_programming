@@ -59,8 +59,15 @@ class CustomerTest < MiniTest::Test
   end
 
   def test_increase_drunkenness()
-    @customer.get_drunker(6)
+    @customer.increase_drunk(6)
     assert_equal(6, @customer.drunkenness)
+  end
+
+  def test_drunkenness_by_drink_alcohol_level()
+    drink = Drink.new("The Wobbly Whale", 10, 12)
+    @customer.get_drunk(drink)
+    assert_equal(12, @customer.drunkenness)
+
   end
 
 end
