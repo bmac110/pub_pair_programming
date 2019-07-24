@@ -12,5 +12,13 @@ class Pub
     @till += amount
   end
 
+  def sell_drink(drink)
+
+    sale = drink.price
+
+    increase_till(sale)
+
+  end
+
 
 end

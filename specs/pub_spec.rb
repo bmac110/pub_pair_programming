@@ -38,5 +38,16 @@ class PubTest < MiniTest::Test
     assert_equal(2010, @pub.till)
   end
 
+  def test_pub_can_sell_drink()
+
+    #Act
+    @pub.sell_drink(@drink1)
+
+    #Assert
+    assert_equal(2006, @pub.till)
+
+
+  end
+
 
 end
