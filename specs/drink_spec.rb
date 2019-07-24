@@ -12,4 +12,8 @@ class DrinkTest < MiniTest::Test
     assert_equal("Purple Rain", @drink.name)
   end
 
+  def test_get_drink_price()
+    assert_equal(6, @drink.price)
+  end
+
 end
