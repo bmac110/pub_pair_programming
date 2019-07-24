@@ -6,7 +6,7 @@ require_relative('../pub') #because customer needs to have access to a pub
 
 class CustomerTest < MiniTest::Test
   def setup()
-    @customer = Customer.new("John Wayne", 500)
+    @customer = Customer.new("John Wayne", 500, 60)
   end
 
   def test_get_customer_name()
@@ -52,6 +52,10 @@ class CustomerTest < MiniTest::Test
     assert_equal(491, @customer.wallet)
     assert_equal(2009, @pub.till)
 
+  end
+
+  def test_get_age()
+    assert_equal(60, @customer.age)
   end
 
 end
