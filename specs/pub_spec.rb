@@ -2,6 +2,7 @@ require('minitest/autorun')
 require('minitest/rg')
 require_relative('../pub')
 require_relative('../drink')
+require_relative('../customer')
 
 class PubTest < MiniTest::Test
 
@@ -46,8 +47,13 @@ class PubTest < MiniTest::Test
     #Assert
     assert_equal(2006, @pub.till)
 
-
   end
 
+  def test_check_customer_age()
+    #Arrange
+    customer = Customer.new("Bruce Willis", 200, 55)
+    @pub.check_age(customer)
+    assert_equal(true, @pub.check_age(customer))
+  end
 
 end
