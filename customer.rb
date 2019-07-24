@@ -16,13 +16,19 @@ class Customer
     @wallet -= amount
   end
 
-  def buy_drink_from_pub(pub)
-    #customer needs to spend money
-    spending = pay(drink)
-    #pub increase with the amount customer has spent
-    pub.increase_till(spending)
+  def buy_drink(drink)
+    spending = drink.price
 
+    pay(spending)
   end
+
+  # def buy_drink_from_pub(pub)
+  #   #customer needs to spend money
+  #   spending = pay(drink)
+  #   #pub increase with the amount customer has spent
+  #   pub.sell_drink(spending)
+  #
+  # end
 
 
 

@@ -28,21 +28,30 @@ class CustomerTest < MiniTest::Test
     assert_equal(490, @customer.wallet)
   end
 
-  def test_customer_can_buy_drink_from_pub()
+  def test_customer_can_buy_a_drink()
     #Arrange
-    #create new drinks the customer has access to
-    @drink1 = Drink.new("Heaven on Earth", 8)
-    @drink2 = Drink.new("Highway to Hell", 9)
-
-    drinks = [@drink1, @drink2]
-    #create a pub the customer has access to
-    @pub = Pub.new("The Jolly Coder", 2000, drinks)
+    drink = Drink.new("The Wobbly Whale", 10)
     #Act
-    @customer.buy_drink_from_pub(@pub)
+    @customer.buy_drink(drink)
     #Assert
-    assert_equal(491, @customer.wallet)
-    assert_equal(2009, @pub.till)
-
+    assert_equal(490, @customer.wallet)
   end
+
+  # def test_customer_can_buy_drink_from_pub()
+  #   #Arrange
+  #   #create new drinks the customer has access to
+  #   @drink1 = Drink.new("Heaven on Earth", 8)
+  #   @drink2 = Drink.new("Highway to Hell", 9)
+  #
+  #   drinks = [@drink1, @drink2]
+  #   #create a pub the customer has access to
+  #   @pub = Pub.new("The Jolly Coder", 2000, drinks)
+  #   #Act
+  #   @customer.buy_drink_from_pub(@pub)
+  #   #Assert
+  #   assert_equal(491, @customer.wallet)
+  #   assert_equal(2009, @pub.till)
+  #
+  # end
 
 end
