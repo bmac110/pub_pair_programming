@@ -8,6 +8,9 @@ class Pub
     @drinks = drinks
   end
 
+  def increase_till(amount)
+    @till += amount
+  end
 
 
 end

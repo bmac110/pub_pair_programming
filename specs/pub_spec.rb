@@ -31,5 +31,12 @@ class PubTest < MiniTest::Test
     assert_equal(5, @pub.drinks.count)
   end
 
+  def test_pub_till_amount_can_increase()
+    #Act
+    @pub.increase_till(10)
+    #Assert
+    assert_equal(2010, @pub.till)
+  end
+
 
 end

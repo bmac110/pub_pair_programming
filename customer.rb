@@ -13,7 +13,9 @@ class Customer
   end
 
   def pay(amount)
-    return @wallet -= amount
+    @wallet -= amount
   end
+
+
 
 end
