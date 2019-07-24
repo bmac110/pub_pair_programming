@@ -17,10 +17,6 @@ class CustomerTest < MiniTest::Test
     assert_equal(500, @customer.wallet)
   end
 
-  def test_customer_is_sober()
-    assert_equal(0, @customer.drinks_count)
-  end
-
   def test_customer_can_spend_money()
     #Act
     @customer.pay(10)
@@ -30,7 +26,7 @@ class CustomerTest < MiniTest::Test
 
   def test_customer_can_buy_a_drink()
     #Arrange
-    drink = Drink.new("The Wobbly Whale", 10)
+    drink = Drink.new("The Wobbly Whale", 10, 12)
     #Act
     @customer.buy_drink(drink)
     #Assert
@@ -40,8 +36,8 @@ class CustomerTest < MiniTest::Test
   def test_customer_can_buy_drink_from_pub()
     #Arrange
     #create new drinks the customer has access to
-    @drink1 = Drink.new("Heaven on Earth", 8)
-    @drink2 = Drink.new("Highway to Hell", 9)
+    @drink1 = Drink.new("Heaven on Earth", 8, 7)
+    @drink2 = Drink.new("Highway to Hell", 9, 22)
 
     drinks = [@drink1, @drink2]
     #create a pub the customer has access to
@@ -56,6 +52,10 @@ class CustomerTest < MiniTest::Test
 
   def test_get_age()
     assert_equal(60, @customer.age)
+  end
+
+  def test_customer_is_sober()
+    assert_equal(0, @customer.drunkenness)
   end
 
 end
