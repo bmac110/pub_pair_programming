@@ -5,5 +5,10 @@ class Customer
   def initialize(name, wallet)
     @name = name
     @wallet = wallet
+    @drinks = []
+  end
+
+  def drinks_count()
+    return @drinks.count()
   end
 end

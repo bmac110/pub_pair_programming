@@ -15,4 +15,8 @@ class CustomerTest < MiniTest::Test
     assert_equal(500, @customer.wallet)
   end
 
+  def test_customer_is_sober()
+    assert_equal(0, @customer.drinks_count)
+  end
+
 end
