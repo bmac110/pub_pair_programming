@@ -64,4 +64,11 @@ class PubTest < MiniTest::Test
 
   end
 
+  def test_pub_can_sell_to_customer__not_of_age()
+    customer = Customer.new("Eleven", 20, 14)
+    @pub.allowed_to_sell(customer, @drink1)
+    assert_equal(2000, @pub.till)
+    assert_equal("Thou shallt not drink!", @pub.allowed_to_sell(customer, @drink1))
+  end
+
 end
