@@ -77,4 +77,16 @@ class PubTest < MiniTest::Test
     assert_equal(0, customer.drunkenness)
   end
 
+  def test_check_if_customer_is_drunk()
+    customer = Customer.new("Frodo", 300, 25)
+    #increase the drunkenness level of the customer
+    customer.increase_drunk(40)
+    @pub.refuse(customer, @drink3)
+    assert_equal(40, customer.drunkenness)
+    assert_equal("Thou shallt goeth home!", @pub.refuse(customer, @drink3))
+    assert_equal(2000, @pub.till)
+    assert_equal(300, customer.wallet)
+
+  end
+
 end

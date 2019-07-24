@@ -32,10 +32,19 @@ class Pub
     return "Thou shallt not drink!"
 
   end
-  
+
   def drunk_check(customer)
     return customer.drunkenness
   end
+
+  def refuse(customer, drink)
+    if drunk_check(customer) < 40
+      sell_drink(drink)
+    end
+
+    return "Thou shallt goeth home!"
+  end
+
 
 
 end
