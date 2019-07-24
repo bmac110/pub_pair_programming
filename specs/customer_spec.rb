@@ -19,4 +19,11 @@ class CustomerTest < MiniTest::Test
     assert_equal(0, @customer.drinks_count)
   end
 
+  def test_customer_can_spend_money()
+    #Act
+    @customer.pay(10)
+    #Assert
+    assert_equal(490, @customer.wallet)
+  end
+
 end
